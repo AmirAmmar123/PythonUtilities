@@ -1,0 +1,92 @@
+"""
+### Assignment: Decision-Making Under Uncertainty
+
+Your task is to write a program that simulates a decision-making experiment.
+In this experiment, participants are presented with two options per trial,
+each linked to a different probability distribution of rewards. The participant
+selects one of the options and, based on the underlying probability distribution,
+they either gain or lose points. This process is repeated over multiple trials.
+
+**Levels of Difficulty**: The task should include three difficulty levels. The
+levels represent how much the two options differ from each other in terms of
+expected rewards. The difficulty level should change between blocks of trials.
+
+Here are the reward distributions for each difficulty level (each distribution
+has two possible outcomes):
+
+- **Easy Level**: Option 1 yields 5 points with 80% probability and 0 points
+with 20% probability. Option 2 yields 2 points with 100% probability.
+- **Medium Level**: Option 1 yields 5 points with 60% probability and 0 points
+with 40% probability. Option 2 yields 3 points with 100% probability.
+- **Hard Level**: Option 1 yields 6 points with 50% probability and 0 points
+with 50% probability. Option 2 yields 3 points with 100% probability.
+
+For the 'losses' domain, these distributions should be mirrored as negative returns.
+
+**Reward Domains**: The task should have two reward domains - gains and losses.
+In the 'gains' domain, participants start with zero points and can only gain points.
+In the 'losses' domain, participants start with a certain number of points and can only
+lose them. This condition should be randomized across participants but remain constant
+within each participant.
+
+**Task Structure and Flow**
+
+1. Begin by displaying a welcome message explaining the task. Inform the participant
+that they will be presented with two options in each trial, and their task is to select
+the one they believe is best. Let them know that the task consists of multiple blocks
+and that the difficulty level will change after each block.
+
+2. Present the two options to the participant (e.g., Option A, Option B) and ask them
+to choose one.
+
+3. After they make a choice, provide feedback about the outcome. Display the number of
+points they gained or lost, but do not update their total score after each trial. Let
+them know that their final score will be based on the average outcome of all blocks.
+
+4. Repeat steps 2 and 3 for a predetermined number of trials per block.
+
+5. At the end of each block, randomly assign the next difficulty level and inform the
+participant that the new block is beginning.
+
+**Data Output**
+
+You should save the data with the following columns:
+
+- Participant ID
+- Block Number
+- Trial Number within Block
+- Difficulty Level
+- Reward Domain (Gains/Losses)
+- Option Chosen
+- Outcome (gain or loss)
+- Total Points after each Block
+
+Moreover, you will need to keep track of the participant number so that each participant
+has a unique ID. Please note that your code should be executed separately for each participant.
+The data file (and any other files) should be shared between participants, i.e., the file needs
+to be updated with each execution of the code for each participant.
+
+Example: Participant 1 finishes their session. Their data is written to the file. When
+Participant 2 begins their session, the same file is used, but the data is appended, not
+overwritten. The file then contains data from both participants.
+
+**Reward Structure**
+
+The reward for each block is not simply a sum or an average of all outcomes within the block.
+Instead, at the end of each block, the code should randomly select one of the outcomes from
+that block as the block's reward
+
+. For example, if in a block of 10 trials, the outcomes were [5, 10, 5, -5, 10, -5, 10, 5, -5, 10],
+any one of these could be the reward for the block. The final reward for the participant will be the
+average of the rewards from each block.
+
+**Other requirements**
+
+Use functions to structure your code. Consider using separate functions for presenting the options,
+getting the participant's choice, determining the outcome, updating the total score, and saving the
+data.
+
+Your code should include comprehensive documentation. Each part of the code should be explained
+and justified. The code should be clear and easy to follow, enabling someone else to understand the
+steps and replicate the task.
+"""
